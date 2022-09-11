@@ -8,11 +8,12 @@ file_dir = os.listdir(folderPath)
 merger = PdfFileMerger()
 
 for item in file_dir:
-    if item.endswith('pdf'):
-        pdfFile = folderPath + item
-        merger.append(open(pdfFile, 'rb'))
+    if item.endswith('pdf'):    #if the file is a pdf
+        pdfFile = folderPath + item       #gets the file (basically)
+        merger.append(open(pdfFile, 'rb'))  #adds the file to the "back"
 
-merger.write('/Users/Anne/Downloads/mergedPDF.pdf') #change this if you want to, im lazy so i probs wont
+#change this if you want to, im lazy so i probs wont
+merger.write('/Users/Anne/Downloads/mergedPDF.pdf') #name of the new mergered file 
 merger.close()
 
 
