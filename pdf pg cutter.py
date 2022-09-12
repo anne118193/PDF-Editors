@@ -1,3 +1,5 @@
+#just use the print function to select page ranges and stuff
+#i think theres a bug in here, some of the pgs go missing
 import os
 import numpy as np
 from pathlib import Path
