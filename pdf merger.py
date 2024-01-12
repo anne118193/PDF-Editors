@@ -1,11 +1,12 @@
 import os
 from pathlib import Path
-from PyPDF2 import PdfFileMerger, PdfFileReader 
+from PyPDF2 import PdfMerger, PdfFileReader 
 
-folderPath = '/Users/Anne/Downloads/New Folder/' #change this (put all the files you want to merge into 1 folder)
+folderPath = '/Users/anne1/Downloads/txtbook/' #change this (put all the files you want to merge into 1 folder)
 file_dir = os.listdir(folderPath)
+file_dir = sorted(file_dir) #sort files alphabetically
 
-merger = PdfFileMerger()
+merger = PdfMerger()
 
 for item in file_dir:
     if item.endswith('pdf'):    #if the file is a pdf
@@ -13,7 +14,7 @@ for item in file_dir:
         merger.append(open(pdfFile, 'rb'))  #adds the file to the "back"
 
 #change this if you want to, im lazy so i probs wont
-merger.write('/Users/Anne/Downloads/mergedPDF.pdf') #name of the new mergered file 
+merger.write('/Users/anne1/Downloads/mergedPDF.pdf') #name of the new mergered file 
 merger.close()
 
 
